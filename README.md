@@ -8,7 +8,7 @@
 <h6>[• Inter line By line in Terminal ]</h6>
 <h6>[ این کد ها را وارد کنیید •)</h6>
 <pre>
-<span>git clone https://github.com/AsTaEbot/eset.git<span>
+<span>git clone https://github.com/alirostamij81o/h<span>
 <span>cd eset<span>
 <span>chmod +x bot<span>
 <span>./bot install<span>
@@ -50,13 +50,11 @@
 <span>cd eset && unzip data.zip<span>
 
 # • Developers!
-[AsTaE_BoT](https://github.com/AsTaE_BoT)
- ([Telegram](https://telegram.me/AsTaE_Bot))
+ ([dr_slow](https://telegram.me/dr_slow))
  
-[M_a_h_D_i_R_o_O](https://github.com/M_a_h_D_i_R_o_O)
- ([Telegram](https://telegram.me/M_a_h_D_i_R_o_O))
+ ([Telegram](https://telegram.me/dr_slow_sudo))
 
 ### • Our Telegram Channel:
 
-[@SShteam](https://telegram.me/SShteam)
+low
 
