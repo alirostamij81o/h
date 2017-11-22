@@ -140,7 +140,7 @@ Please Enter ( Channel ) ID : ]])
       LCC = "Naji"
     }
     create(config, "./Config.lua")
-    print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n➡➡[•• ᴄᴏɴғɪɢ ʜᴀs ʙᴇᴇɴ ᴄʀᴇᴀᴛᴇᴅ ••]▶\n\027[00m")
+    print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n>>>>> Config Has Been Created <<<<<\n\027[00m")
     sleep(3)
   end
   create_config_auto()
@@ -169,7 +169,7 @@ local Skip_AutoSet = function()
     LCC = "Naji"
   }
   serialize_to_file(config, "./Config.lua")
-  print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n➡➡[•• ᴄᴏɴғɪɢ ʜᴀs ʙᴇᴇɴ ᴄʀᴇᴀᴛᴇᴅ ••]▶\n\027[00m")
+  print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n>>>>> Config Has Been Created <<<<<\n\027[00m")
   sleep(3)
 end
 local create_config = function()
@@ -360,10 +360,10 @@ local load_config = function()
   return config
 end
 local load_help = function()
-  local f = io.open("help.lua", "r")
+  local f = io.open("./Help/help.lua", "r")
   	if f then
 	f:close()
-	local help = loadfile("help.lua")()
+	local help = loadfile("./Help/help.lua")()
 	return help
 	else
 	return false
@@ -428,11 +428,7 @@ if not database:get("setnumbergp") then
   setnumbergp()
   database:setex("setnumbergp", 5 * hour, true)
 end
-  print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n➡➡ [•• ᴄᴏɴғɪʀᴍᴇᴅ ʟɪᴄᴇɴsᴇ ° ʙʏ AsTaE °  ••]\n\027[00m")
-
-print("\027[" .. color.black[1] .. ";" .. color.white[2] .. "m\n➡➡ [••ᴄʜᴀɴɴᴇʟ: @SShteam | ɪs sᴇɴᴅ ° ᴜᴘᴅᴇᴛᴇ ° ᴍᴏᴅʀɴ••] ▶\n\027[00m")
-
-print("\027[" .. color.black[1] .. ";" .. color.white[2] .. "m\n➡➡ [••برای دریافت اپدیت ها  به کانال ما بزنید | ᴄʜᴀɴɴᴇʟ: @SShteam ••] ▶\n\027[00m")
+  print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n>>>>>>> Confirmed License ( By Naji ) <<<<<<<\n\027[00m")
 
 
 local is_Naji = function(msg)
@@ -14658,7 +14654,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
             local helpfa = _help and _help.helpfa
             local helptime = 60
             local help_en = helpen and helpen.help or "!Inaccessible!"
-            local help_fa = helpfa and helpfa.help or "قابل دسترسی نمیباشد"
+            local help_fa = helpfa and helpen.help or "قابل دسترسی نمیباشد"
             database:setex("helptime:" .. msg.chat_id_, helptime, true)
             if database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, help_en, 1, "md")
@@ -14666,7 +14662,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               send(msg.chat_id_, msg.id_, 1, help_fa, 1, "md")
             end
           end
-        if database:get("helptime:" .. msg.chat_id_) and is_momod(msg.sender_user_id_, msg.chat_id_) then
+          --[[if database:get("helptime:" .. msg.chat_id_) and is_momod(msg.sender_user_id_, msg.chat_id_) then
             if database:get("lang:gp:" .. msg.chat_id_) then
               local helpen = _help.helpen
               local helplock = helpen.helplock
@@ -14679,7 +14675,6 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               local helppanel = helpen.helppanel
               local helpclean = helpen.helpclean
               local helpwarn = helpen.helpwarn
-			  local helpfun = helpen.helpfun
               if text:match("^1$") then
                 database:del("helptime:" .. msg.chat_id_)
                 send_large_msg(msg.chat_id_, msg.id_, 1, helpvaziat, 1, "md")
@@ -14710,9 +14705,6 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               elseif text:match("^10$") then
                 database:del("helptime:" .. msg.chat_id_)
                 send_large_msg(msg.chat_id_, msg.id_, 1, helpwarn, 1, "md")
-			  elseif text:match("^11$") then
-                database:del("helptime:" .. msg.chat_id_)
-                send_large_msg(msg.chat_id_, msg.id_, 1, helpfun, 1, "md")
               elseif text:match("^0$") then
                 send_large_msg(msg.chat_id_, msg.id_, 1, "• The Operation was *Canceled* !", 1, "md")
                 database:del("helptime:" .. msg.chat_id_)
@@ -14733,7 +14725,6 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               local helppanel = helpfa.helppanel
               local helpclean = helpfa.helpclean
               local helpwarn = helpfa.helpwarn
-			  local helpfun = helpfa.helpfun
               if text:match("^1$") then
                 database:del("helptime:" .. msg.chat_id_)
                 send_large_msg(msg.chat_id_, msg.id_, 1, helpvaziat, 1, "md")
@@ -14764,9 +14755,6 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               elseif text:match("^10$") then
                 database:del("helptime:" .. msg.chat_id_)
                 send_large_msg(msg.chat_id_, msg.id_, 1, helpwarn, 1, "md")
-			  elseif text:match("^11$") then
-                database:del("helptime:" .. msg.chat_id_)
-                send_large_msg(msg.chat_id_, msg.id_, 1, helpfun, 1, "md")
               elseif text:match("^0$") then
                 send(msg.chat_id_, msg.id_, 1, "• عملیات لغو گردید !", 1, "md")
                 database:del("helptime:" .. msg.chat_id_)
@@ -14774,7 +14762,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
                 send(msg.chat_id_, msg.id_, 1, "• شماره مورد نظر شما در لیست موجود نمیباشد !", 1, "md")
               end
             end
-          end
+          end]]
         end
         if is_sudo(msg) and (text:match("^[Ss]etpayping$") or text:match("^تنظیم پی پینگ$")) then
           if database:get("lang:gp:" .. msg.chat_id_) then
@@ -14813,7 +14801,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
           end
         end
         if is_momod(msg.sender_user_id_, msg.chat_id_) and (text:match("^[Tt]ime$") or text:match("^زمان$")) and check_user_channel(msg) then
-          local url, res = https.request("https://irapi.ir/time/")
+          local url, res = https.request("https://irapi.ir/time")
           if res == 200 then
             local jdat = json.decode(url)
             if jdat.FAtime and jdat.FAdate and jdat.ENtime and jdat.ENdate then
