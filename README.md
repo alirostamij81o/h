@@ -9,7 +9,7 @@
 <h6>[ این کد ها را وارد کنیید •)</h6>
 <pre>
 <span>git clone https://github.com/alirostamij81o/h<span>
-<span>cd eset<span>
+<span>cd h<span>
 <span>chmod +x bot<span>
 <span>./bot install<span>
 </pre>
